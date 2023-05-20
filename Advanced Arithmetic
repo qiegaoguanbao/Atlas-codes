@@ -1,0 +1,151 @@
+#Integer Division
+//
+#$ python
+>>> 10 // 4
+2
+
+#Exponentiation
+**
+#>>> 2 ** 3
+8
+>>> 2 ** -1
+0.5
+
+#Modulus
+%
+>>> 8 % 3
+2
+
+#Negation
+-
+#>>> x = 0.5
+>>> -x
+-0.5
+
+
+def main(): 
+    x = 36 / 10
+    y = 36 // 10
+    print(x)
+    print(y)
+
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    
+def main(): 
+    x = 36.0 // 10
+    y = -5 // 2
+    print(x)
+    print(y)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+def main(): 
+    x = 39 % 17
+    y = 12 % 4
+    z = 18 % 19
+    print(x)
+    print(y)
+    print(z)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+def main(): 
+    x = - (19 - 7) # the 1st is minus, the 2nd is negation
+    y = 23 - -4    # the 1st is negation, the 2nd is minus
+    z = --8        # both negation
+    print(x)
+    print(y)
+    print(z)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+#Highest Precedence
+
+() parentheses
+
+** exponentiation
+
+-   negation
+
+*    /    //    %
+
++    -
+
+comparison
+
+not
+
+and  or
+
+#Lowest Precedence
+
+
+
+
+import math
+
+#𝝅
+math.pi
+
+#e
+math.e
+
+#√x
+math.sqrt(x)
+
+#e^x
+math.exp(x)
+
+#ln(x)
+math.log(x)
+
+Note: i = √-1
+
+
+
+#e^i𝝅 + 1 = 0
+import math
+
+def main(): 
+    ans = math.exp(math.sqrt(-1) * math.pi)
+    ans += 1
+    print(ans)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+#e^(√x*𝝅) + ln(y)		
+import math
+import random       # to give us random values for x and y
+
+def main(): 
+    x = random.randint(0, 10)       # must be a non-negative number
+    y = random.randint(1, 10)       # must be a positive number
+    ans = math.exp(math.sqrt(x) * math.pi)
+    ans += math.log(y)
+    print(ans)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
