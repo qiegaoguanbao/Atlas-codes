@@ -1,0 +1,150 @@
+#参数/变量范围的讲解，因为有了范围或者叫作用域，因此不需要给每个参数/变量一个不重复的名字。因为各自有不同的作用域，因此可以用同样的名字。Python在运行的时候，只是隐藏了当前函数之外的参数/变量，假装他们不存在，这样更方便
+#parameters/arguments
+#错误示例1
+def count_to_n(n):
+    '''
+    prints numbers from 0 to n-1
+    params: 
+        n (int): number to count up to
+    '''
+    print(message)
+    for i in range(n):
+        print(i)
+
+
+def main():
+    message = "Counting up from zero!"
+    count_to_n(10)
+
+
+if __name__ == "__main__":
+	main()
+#参数message没有定义，因为在Function body之外，但又不是global variables
+
+
+#因为存在scope，所以参数名字可以复用
+def function1():
+	message = "Running function1"
+	print(message)
+
+def function2():
+	message = "Running function2"
+	print(message)
+
+def function3():
+	message = "Running function3"
+	print(message)
+
+def main():
+	function1()
+	function2()
+	function3()
+
+if __name__ == "__main__":
+	main()
+  
+  
+  
+  
+#Function Security
+#要分清function的caller和callee，如果程序中包含函数的调用，则发生该调用的函数称为调用者caller，被调用的函数称为被调用者callee
+def helloworld():
+    '''
+    says hello to the world!
+    '''
+    print("Hello, world!")
+
+
+def main():
+	helloworld()
+
+
+if __name__ == "__main__":
+	main()
+#在以上程序中main()是caller，helloworld()是callee
+
+
+
+
+#尽量避免全局变量的使用，除非是很确定要调用多次，并且绝对不会改变的变量
+#全局变量在程序最前面定义，在所有函数之前。这也是Python的方便之处，用顺序来当做语法的一部分
+#错误示例1
+balance = 50.0
+
+def deposit(amount):
+    '''
+    deposits the amount into the bank account (balance)
+    params: 
+        amount (number): amount of money to deposit
+    '''
+    balance += amount
+
+
+def main():
+    deposit(10.0)
+    print(balance)
+    
+
+if __name__ == '__main__':
+    main()
+#在以上程序中，balance是全局变量，但是在函数中又再次出现，并且进行了赋值操作。因为scope的优先顺序问题，Python在运行时会优先local varibles，所以会报错balance未定义。
+
+
+
+
+#Global Constants/全局常数
+#应该创建全局变量的唯一原因是，如果您完全确信在程序运行时永远不会重新分配新值。如果您有一个在整个程序中都很有用的常量值，这是使用全局变量的时候了。
+#我们可以使用全局常量来避免你可能称之为幻数magic number的东西，即没有指定名称的独立数字。如下面程序中的9.8，应该对其命名。以免增加程序的阅读困难。
+def calculate_gpe(mass, height):
+    '''
+    function for gravitational potential energy
+    params: 
+        mass (number): mass of object
+        height (number): height of object
+    return: gpe
+    '''
+    return mass * 9.8 * height
+
+
+def main():
+    mass = float(input("What is the object's mass?"))
+    height = float(input("How high off the ground is the object?"))
+    print("Gravitational Potential Energy =", calculate_gpe(mass, height))
+
+
+if __name__ == "__main__":
+    main()
+#在命名全局常量时，我们将它们大写以清楚地显示它们是常量值的占位符。我们现在将定义一个全局常量GRAVITY来存储值9.8。
+GRAVITY = 9.8
+
+def calculate_gpe(mass, height):
+    '''
+    function for gravitational potential energy
+    params: 
+        mass (number): mass of object
+        height (number): height of object
+        return: gpe
+    '''
+    return mass * GRAVITY * height
+
+
+def calculate_fgrav(mass):
+    '''
+    calculates force due to gravity
+    params: 
+        mass (number): mass of object
+    return: force of gravity on an object
+    '''
+    return mass * GRAVITY
+
+
+def main():
+    mass = float(input("What is the object's mass?"))
+    height = float(input("How high off the ground is the object?"))
+    print("Gravitational Potential Energy =", calculate_gpe(mass, height))
+    print("Force due to gravity =", calculate_fgrav(mass))
+
+
+if __name__ == "__main__":
+    main()
+#记住，在程序期间，我们不允许将新值重新分配给全局常量，但是在程序开始前调整该值是可以的。

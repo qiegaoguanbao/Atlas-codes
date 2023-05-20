@@ -1,0 +1,177 @@
+#我们将parameters定义为传递给函数的信息。还要记得parameters不同于arguments，因为arguments是函数调用的内容，而parameters是函数定义的内容。
+#其实arguments翻译成变量更好（具体值），parameters翻译成参数更好（抽象值）
+
+
+def repeat(s, n):
+    '''
+    repeats the input string s, n times
+    params: 
+        s (str): string to repeat
+        n (int): number of times to repeat it
+    return: repeated string
+    '''
+    repeat_str = ''
+    for i in range(n):
+        repeat_str += s
+	
+    return repeat_str
+
+
+def main():
+    print(repeat('ab', 3))
+
+
+if __name__ == '__main__':
+	main()
+#函数可以有多个参数，这些参数不一定都有相同的类型。
+#s是字符串，而n是int。同样，参数类型不必与返回类型匹配。
+#Python实际上不会检查您传递给函数的parameters类型，除非您要求它这样做。根据您尝试编写的函数类型，这可能既有用又有害。
+#如果您希望您的函数适用于多种类型，那么它非常有用，但它可能会导致错误🛑比如当用户使用超出你原有定义的arguments去调用你的函数的时候
+
+#错误示例1
+def repeat(s, n):
+    '''
+    repeats the input string s, n times
+    params: 
+        s (str): string to repeat
+        n (int): number of times to repeat it
+    return: repeated string
+    '''
+    repeat_str = ''
+    for i in range(n):
+        repeat_str += s
+	
+    return repeat_str
+
+
+def main():
+    print(repeat(4, 3))
+
+
+if __name__ == '__main__':
+	main()
+#函数中parameter s被定义为str，但是输入的arguments为int，因此会报错
+
+#arguments类型可以在函数标题中通过: 给出
+def repeat(s: str, n: int):
+    '''
+    repeats the input string s, n times
+    params: 
+        s (str): string to repeat
+        n (int): number of times to repeat it
+    return: repeated string
+    '''
+    repeat_str = ''
+    for i in range(n):
+        repeat_str += s
+	
+    return repeat_str
+
+
+def main():
+    print(repeat('ab', '3'))
+
+
+if __name__ == '__main__':
+	main()
+#argument n输入类型错误，应该为3而不是‘3’
+#因为parameter n类型为int，而不是str，所以报错
+#注意：在过去的两个例子中，程序都崩溃了。这可能会让你问为什么我们在标题中指定参数的类型很重要？
+#答案是程序员通常不会指定。但是，它对试图阅读您的代码的其他程序员或日后回看您的代码时会很有用（如果用于代替函数标题中的parameters描述）。
+
+
+
+
+#parameters的顺序，可以通过在函数header中指定，通过逗号隔开
+def repeat(s, n):
+    '''
+    repeats the input string s, n times
+    params: 
+        s (str): string to repeat
+        n (int): number of times to repeat it
+    return: repeated string
+    '''
+    repeat_str = ''
+    for i in range(n):
+        repeat_str += s
+	
+    return repeat_str
+
+
+def main():
+    print(repeat(3, 'abab'))
+
+
+if __name__ == '__main__':
+	main()
+#如果变量类型给反了，那就会报错
+
+
+
+
+#除了设置参数的类型外，我们还可以添加默认值。
+#默认值为参数提供了一种备份选项，以便在调用函数时没有为该参数提供参数时使用。
+#如果给出了参数，则该参数将覆盖默认值并被使用。我们可以看到默认值的语法如下:
+def repeat(s = 'cd', n = 4):
+    '''
+    repeats the input string s, n times
+    params: 
+        s (str): string to repeat
+        n (int): number of times to repeat it
+    return: repeated string
+    '''
+    repeat_str = ''
+    for i in range(n):
+        repeat_str += s
+	
+    return repeat_str
+
+
+def main():
+    print(repeat('ab', 3))
+    print(repeat())
+    print(repeat('bc'))
+
+
+if __name__ == '__main__':
+	main()
+#在以上程序中，因为函数定义中给出了parameters的默认值，因此在调用时arguments给全或者不给全或者完全不给，都不影响程序运行
+
+
+
+#在这个例子中，如果我们想改变某一个arguments的默认值，那我们就给出这个argument就可以了，函数依旧可以运行
+def repeat(s = 'cd', n = 4):
+    '''
+    repeats the input string s, n times
+    params: 
+        s (str): string to repeat
+        n (int): number of times to repeat it
+    return: repeated string
+    '''
+    repeat_str = ''
+    for i in range(n):
+        repeat_str += s
+	
+    return repeat_str
+
+
+def main():
+    print(repeat(n = 2))
+
+
+if __name__ == '__main__':
+	main()
+	
+#单独给出一个argument的方式来修改函数parameters默认值的方法要注意，只有以下两种方式是正确的
+
+#def main():
+    print(repeat('ab', 3))
+    print(repeat())
+    print(repeat('bc'))
+		
+#print(repeat(n = 2))单独给出一个argument要带上名字
+
+
+#这种按照顺序列出的模式，如果只给出一个argument，会被Python默认解读为第一个argument
+#print(repeat(2))如果直接用这种方式输入第二个变量，会报错，因为会被Python识别为第一个argument，而第一个argument类型为str
+#print(repeat( , 2))这样的模式会造成语法错误，Python无法识别

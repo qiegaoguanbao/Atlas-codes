@@ -1,0 +1,167 @@
+#Addition
++
+
+#Subtraction
+-
+
+#Multiplication
+*
+
+#Division
+/
+
+
+
+
+def main(): 
+    x = 80 + 16.0
+    y = 30.0 - 37
+    z = 41 * 82.0
+    print(x)
+    print(y)
+    print(z)
+
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    
+def main(): 
+    x = '80' + '16.0'
+    print(x)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+		
+def main(): 
+    x = 'Hello'
+    y = 'Code in Place!'
+    print(x + ' ' + y)
+
+if __name__ == '__main__':
+	main()
+	
+	
+	
+	
+	
+def main(): 
+    x = '80' + 16.0
+    print(x)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+def main(): 
+    x = int('34') + 17.0
+    y = 19 + int(float('5.0'))
+    print(x)
+    print(y)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+def main(): 
+    x = 3.625
+    y = int(x)
+    print(float(y))
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+#Highest Precedence
+
+() parentheses
+
+* /
+
++ -
+
+#Lowest Precedence
+
+
+
+
+def main(): 
+    x = 99
+    y = 70
+    z = x - y
+    print(z)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+def main(): 
+    x = 99
+    y = 70
+    z = x - y
+    x = 37
+    print(z)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+def main(): 
+    x = 99
+    y = 70
+    z = x - y
+    x = z - x
+    print(x)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+		
+def main(): 
+    x = 7
+    x = x + 1
+    print(x)
+
+if __name__ == '__main__':
+    main()
+		
+		
+#variable = variable operator (expression)     is equivalent to     variable operator= (expression)
+ 
+x += 3  等价于  x = x + 3 
+
+
+
+		
+def main(): 
+   x = 15
+   x += 6	# same as x = x + 6     (x = 21)
+   x -= 10	# same as x = x - 10    (x = 11)
+   x *= 8	# same as x = x * 8     (x = 88)
+   x /= 4	# same as x = x / 4
+   print(x)
+
+if __name__ == '__main__':
+	main()
+	
+	
+	
+	

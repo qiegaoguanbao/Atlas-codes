@@ -1,0 +1,106 @@
+#Equal  
+==
+#True Example / False Example
+#1+1 == 2 / 2 == 3
+
+#Does not equal
+!=
+#True Example / False Example
+#3.2 != 3 / 5-5 != 0
+
+#Less than
+<
+#True Example / False Example
+#5 < 7 / 2 < 1
+
+#Greater than
+>
+#True Example / False Example
+#4 > 2 / 1 > 9
+
+#Less than or equal to
+<=
+#True Example / False Example
+#90 <= 100 / 18.4 <= 4
+
+#Greater than or equal to
+>=
+#True Example / False Example
+#5.0 >= 5.0 / 11 >= 20
+
+#Operator
+and
+#True Example / False Example
+(3 < 5) and (-1 == -1) / (7 == 8) and (12 > 2)
+
+#Operator
+or
+#True Example / False Example
+(0 == 1) or (10 <= 15) / (0 > 5) or (6 == 3)
+
+#Operator
+not
+#True Example / False Example
+not False / not 1 > 0
+
+
+#Highest Precedence
+
+() parentheses
+
+*    /
+
++    -
+
+not
+
+and   or
+
+comparison
+
+#Lowest Precedence
+
+
+
+
+def main():
+    name = "Michael"
+    age = 21
+    born_in_december = True
+    lucky_number = 6
+
+    if name != "Karel":
+        print("Hi, I don't think we've met before!")
+    if age == 21 or not(born_in_december):
+        print("Do you remember...")
+    if lucky_number > 5 and name == "Michael" and not(age == 30) and born_in_december:
+        print("Hey! I've been looking all over for you!")
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+
+#做个题，复合条件判断
+def main():
+   a = True
+   b = False
+   c = False
+   d = True
+
+   # Option 1
+   if (a and not(b)) and (b or (d and a)):
+	   print("Option 1 is True!")
+	
+   # Option 2
+   if a and (b or (d and not(not(c) or (a and d and c)))):
+	   print("Option 2 is True!")
+	
+   # Option 3
+   if (a and not(b) and not(c) and d and (a and d) and not(b or c)) and not(d and (a or (b and c)) and c):
+      print("Option 3 is True!")
+
+
+if __name__ == "__main__":
+	main()

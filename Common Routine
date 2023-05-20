@@ -1,0 +1,669 @@
+"""
+英寸/英尺换算
+An example program with constants
+"""
+
+INCHES_IN_FOOT = 12
+def main():
+    feet = float(input("Enter number of feet: "))
+    inches = feet * INCHES_IN_FOOT
+    print("That is", inches, "inches!")
+    
+# This provided line is required at the end of a Python file
+# to call the main() function.
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+"""
+求平方根
+This program computes square roots
+"""
+import math
+def main():
+    num = float(input("Enter number: "))
+    root = math.log(num)
+    print("Square root of", num, "is", root)
+    
+# This provided line is required at the end of a Python file
+# to call the main() function.
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+"""
+掷骰子
+File: rolldice.py
+------------------
+Simulate rolling two dice, and prints results of each
+roll as well as the total.
+"""
+
+import random
+
+# Number of sides on each die to roll
+NUM_SIDES = 6
+
+def main():
+    # setting seed is useful for debugging
+    # random.seed(1)
+    die1 = random.randint(1, NUM_SIDES)
+    die2 = random.randint(1, NUM_SIDES)
+    total = die1 + die2
+    print("Dice have", NUM_SIDES, "sides each.")
+    print("First die:", die1)
+    print("Second die:", die2)
+    print("Total of two dice:", total)
+
+# This provided line is required at the end of a Python file
+# to call the main() function.
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+"""
+骰子模拟器
+File: dicesimulator.py
+----------------------
+Simulate rolling two dice, three times.  Prints
+the results of each die roll.  This program is used
+to show how variable scope works.
+"""
+
+import random
+
+# Number of sides on each die to roll
+NUM_SIDES = 6
+
+# Simulates rolling two dice and prints their total
+def roll_dice():
+    die1 = random.randint(1, NUM_SIDES)
+    die2 = random.randint(1, NUM_SIDES)
+    total = die1 + die2
+    print("Total of two dice:", total)
+
+def main():
+    random.seed(1)
+    die1 = 10
+    print("die1 in main() starts as: " + str(die1))
+    roll_dice()
+    roll_dice()
+    roll_dice()
+    print("die1 in main() is: " + str(die1))
+
+# This provided line is required at the end of a Python file
+# to call the main() function.
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+"""
+讲故事
+Uses constants to tell a mad libs story.
+"""
+
+# Fun fact: 6174 is known as Kaprekar's constant,
+# and it's a pretty mysterious number :)
+
+WIZARD = 'Karel'
+NUMBER_OF_FRUIT = 6174
+FRUIT = 'mangoes'
+
+def main():
+    print("There once was a wizard by the name of " + WIZARD + " who loved to eat " + FRUIT + ".")
+    print(WIZARD + " always kept a stash of " + str(NUMBER_OF_FRUIT) + " " + FRUIT + " in their house...")
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+"""
+乘法计算器
+Program: multiply two numbers
+--------------------
+This program asks the user for two
+integers and prints the value of the first number
+multiplied with the second
+"""
+
+def main():
+    print("This program multiplies two numbers.")
+    
+    num1 = int(input("Enter first number:  "))
+    
+    num2 = int(input("Enter second number: "))
+    ans = num1 * num2
+    print(ans)
+
+
+# This provided line is required at the end of
+# Python file to call the main() function.
+if __name__ == '__main__':
+    main()
+		
+		
+
+
+#讲个笑话		
+PROMPT = "What do you want? "
+JOKE = "Here is a joke for you! Karel is heading out to the grocery store. A programmer tells her: get a liter of milk, and if they have eggs, get 12. Karel returns with 13 liters of milk. The programmer asks why and Karel replies: 'because they had eggs'"
+SORRY = "Sorry I only tell jokes"
+
+def main():
+    user_input = input("What do you want? ")
+    
+    PROMPT = "Joke"
+    
+    JOKE = "Here is a joke for you! Karel is heading out to the grocery store. A programmer tells her: get a liter of milk, and if they have eggs, get 12. Karel returns with 13 liters of milk. The programmer asks why and Karel replies: 'because they had eggs'"
+    
+    SORRY = "Sorry I only tell jokes"
+    
+    # your code here.
+    if user_input != PROMPT:
+        print(SORRY)
+    else:
+        print(JOKE)
+            
+
+if __name__ == "__main__":
+    main()
+		
+
+
+#随机数生成器
+# this is necessary if you want to use random numbers
+import random
+
+def main():
+    """
+    You should write your code here. 
+    """
+    
+    for i in range(10):
+        value = random.randint(1, 100)
+        print(value)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+
+#数字放大器，到某一个阈值
+def main():
+    """
+    You should write your code here. 
+    """
+    curr_value = int(input("Enter a number: "))
+    
+    while curr_value <= 100:
+        curr_value = curr_value * 2
+        print(curr_value)
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+"""
+倒计时计数器
+Program: Liftoff
+--------------------
+Countdown from 10 to 1 and then print Liftoff!
+"""
+
+def main():
+    i=11
+    while i >= 2:
+        i = i - 1
+        print(i)
+    print("Liftoff!")
+
+
+# This provided line is required at the end of
+# Python file to call the main() function.
+if __name__ == '__main__':
+    main()
+		
+		
+
+
+#C14计算器
+import math
+
+K = -8266.64
+
+def main():
+    calculate_age_single_sample()
+
+def calculate_age_single_sample():
+    # ask the user to enter the percent c14 left in their sample
+    pct_left = float(input("% of natural c14: "))
+    # calc the age    
+    age = K * math.log(pct_left / 100)
+    # print the result    
+    print("Sample is " + str(age) + " years old.")
+
+if __name__ == '__main__':
+    main()
+		
+		
+	
+	
+		
+#猜数字
+import random
+
+def main():
+    secret_number = random.randint(1, 99)
+    print("I am thinking of a number between 1 and 99...")
+    guess = int(input("Enter a guess: "))
+    # True if guess is not equal to secret number
+    while guess != secret_number:
+        # True if guess is less than secret number
+        if guess < secret_number:
+            print("Your guess is too low")
+        else:
+            print("Your guess is too high")
+            
+        print("") # an empty line
+        guess = int(input("Enter a new guess: "))
+        
+    print("Congrats! The number was: " + str(secret_number))
+    
+if __name__ == '__main__':
+    main()
+		
+		
+		
+
+#偶数生成器
+def main():
+    for i in range(20):
+        # use the value inside the for loop
+        print(i * 2)
+   
+# call the main function when "run" 
+if __name__ == "__main__":
+    main()
+
+
+
+
+#游戏，选门抽奖
+def main():
+    door = int(input("Door: ")) # while the input is invalid 
+    while door < 1 or door > 3 :
+       # tell the user the input was invalid
+       print("Invalid door!")
+       # ask for a new input
+       door = int(input("Door: "))
+    
+    prize = 4
+    if door == 1:
+        prize = 2 + 9 // 10 * 100
+    elif door == 2:
+        locked = prize % 2 != 0 
+        if not locked:
+            prize += 6
+    elif door == 3 :
+        for i in range(door):
+            prize += i
+    print("You win", prize, "prizes")
+            
+if __name__ == '__main__':
+    main()
+
+
+
+
+#加法测试题库		
+import random
+
+def main():
+    print("Khansole Academy")
+    # TODO: your code here
+    
+    num1 = random.randint(10, 99)
+    num2 = random.randint(10, 99)
+    ans1 = num1 + num2
+    print("What is " + str(num1) + " + " + str(num2)+"?")
+    ans2 = input()
+    print("Your answer: ", ans2)
+    if int(ans2) == ans1:
+        print("Correct!")
+    else:
+        print("Incorrect.")
+        print("The expected answer is ", ans1)
+        
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+#画一个旗子
+from graphics import Canvas
+import random
+
+CANVAS_WIDTH = 450
+CANVAS_HEIGHT = 300
+
+def main():
+    canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+    # TODO, your code here
+    left_x = 0
+    top_y = 0
+    right_x = 450
+    bottom_y = 150
+    canvas.create_rectangle(left_x, top_y, right_x, bottom_y, "red")
+    
+    
+    canvas.create_rectangle(0, 0, 450, 150, "red")
+    
+    
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+#如何召唤画布，如何写字，如何画几何形状，如何插入图片
+from graphics import Canvas
+import time
+
+CANVAS_WIDTH = 500
+CANVAS_HEIGHT = 500
+
+def main():
+    canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+
+    # a line for good measure!
+    canvas.create_line(0, 0, 500, 500)
+
+    # a blue square with width and height = 80
+    canvas.create_rectangle(70, 70, 150, 150, "blue")
+
+    # a red oval and a rectangle at the exact same spot!
+    canvas.create_rectangle(250, 150, 500, 500)
+    canvas.create_oval     (250, 150, 500, 500, "red")
+
+    # images require the pillow library
+    canvas.create_image(0,200,"simba.png")
+
+    # some text is written on the screen.
+    canvas.create_text(50, 20, 
+        "Programming is Awesome!!!", 
+        color="blue", 
+        font="Courier", 
+        font_size=28)
+
+    # dude, where's my rect?
+    canvas.create_rectangle(0, 800, 10, 810)
+    
+    # this is just for demo purposes
+    show_mouse_position(canvas)
+    
+def show_mouse_position(canvas):
+    """
+    Warning: you can ignore this code. I just included
+    it for demo purposes. It continually asks for the
+    users mouse location and prints the location to the
+    terminal.
+    """
+    while True:
+        x = canvas.get_mouse_x()
+        y = canvas.get_mouse_y()
+        # this is an fstring, which is a fancy way to 
+        # combine numbers and strings
+        print(f"x = {x}, y = {y}")
+        time.sleep(1/50)
+
+if __name__ == '__main__':
+    main()
+    
+    
+
+
+#如何找到画布中心，并在中心画一个正方形    
+from graphics import Canvas
+
+CANVAS_WIDTH = 400
+CANVAS_HEIGHT = 300
+SQUARE_SIZE = 100
+
+def main():
+    canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+    
+    # get the middle of the canvas
+    middle_x = CANVAS_WIDTH/2
+    middle_y = CANVAS_HEIGHT/2
+    
+    # calculate the top left corner position
+    left_x = middle_x - SQUARE_SIZE/2
+    top_y = middle_y - SQUARE_SIZE/2
+    
+    # calculate the right and bottom of the square
+    right_x = left_x + SQUARE_SIZE
+    bottom_y = top_y + SQUARE_SIZE
+    
+    # draw the square
+    canvas.create_rectangle(left_x, top_y, right_x, bottom_y, 'blue')
+
+if __name__ == '__main__':
+    main()
+    
+    
+    
+
+#延对角线做一串小正方形，布满对角线
+import graphics
+
+def main():
+    # makes a canvas
+    canvas = graphics.create_canvas(300, 300)
+    # make 20 some blue suares
+    for i in range(31):
+        value = i * 10
+        # it can be helpful to store each coord into its own variable
+        left_x = value
+        top_y = value
+        right_x = value + 10
+        bottom_y = value + 10
+        canvas.create_rectangle(left_x,top_y,right_x,bottom_y, 'blue')
+        
+        # keep track of i
+        print(i)
+        
+if __name__ == '__main__':
+    main()
+
+
+
+
+#求平均数
+def main():
+    avg_1 = average(0, 10)
+    avg_2 = average(8, 10)
+    
+    final = average(avg_1, avg_2)
+    print("avg_1", avg_1)
+    print("avg_2", avg_2)
+    print("final", final)
+    
+def average(a, b):
+    """
+    returns the number which is half way between a and b
+    """
+    sum = a + b
+    return sum / 2
+    
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    
+#画几个不同形状不同颜色的旗子，并通过在画布上点击切换显示    
+from graphics import Canvas
+
+CANVAS_WIDTH = 400
+CANVAS_HEIGHT = 300
+
+def main():
+    canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+    draw_japan_flag(canvas)
+    canvas.wait_for_click()
+    
+    draw_bangladesh_flag(canvas)
+    canvas.wait_for_click()
+    
+    draw_pulau_flag(canvas)
+    canvas.wait_for_click()
+    
+    draw_georgia_flag(canvas)
+    
+def draw_japan_flag(canvas):
+    draw_circle(canvas, CANVAS_WIDTH/2, CANVAS_HEIGHT/2, 120, 'red')
+   
+def draw_bangladesh_flag(canvas):
+    canvas.create_rectangle(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT, 'darkgreen')
+    draw_circle(canvas, CANVAS_WIDTH * 0.4, CANVAS_HEIGHT / 2, 150, 'red')
+
+def draw_pulau_flag(canvas):
+    canvas.create_rectangle(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT, 'dodgerblue')
+    draw_circle(canvas, CANVAS_WIDTH * 0.4, CANVAS_HEIGHT / 2, 150, 'yellow')
+
+
+
+def draw_circle(canvas, center_x, center_y, size, color):
+    """
+    draw a circle on the given canvas. Centered at the given location, in
+    the given color
+    """
+    left_x = center_x - size/2
+    top_y = center_y - size/2
+    right_x = left_x + size
+    bottom_y = top_y + size
+    canvas.create_oval(left_x, top_y, right_x, bottom_y, color)
+
+def draw_georgia_flag(canvas):
+    canvas.clear()
+    # some calculations for where the pluses go!
+    x_left = CANVAS_WIDTH * 1/4
+    x_right = CANVAS_WIDTH * 3/4
+    y_top = CANVAS_HEIGHT * 1/4
+    y_bottom = CANVAS_HEIGHT * 3/4
+    
+    # four calls to draw_plus
+    draw_plus(canvas, x_left - 20, y_top - 20, x_left+20, y_top+20, 10)
+    draw_plus(canvas, x_right - 20, y_top - 20, x_right+20, y_top+20, 10)
+    draw_plus(canvas, x_left - 20, y_bottom - 20, x_left+20, y_bottom+20, 10)
+    draw_plus(canvas, x_right - 20, y_bottom - 20, x_right+20, y_bottom+20, 10)
+    
+    # big background plus
+    draw_plus(canvas, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT, 30)
+    
+    
+def draw_plus(canvas, x_1, y_1, x_2, y_2, width):
+    """
+    Draws a plus which is inscribed in the rectangle defined by the two 
+    points (x_1, y_1) and (x_2, y_2). The thickness of each arm of the plus
+    is also passed in as a parameter
+    """
+    # compute the middle of the plus
+    mid_x = x_1 + (x_2 - x_1) / 2
+    mid_y = y_1 + (y_2 - y_1) / 2
+    
+    # half an arm thickness
+    half = width/2
+    
+    # create the two rectangles
+    canvas.create_rectangle(x_1, mid_y - half, x_2, mid_y + half, 'red')
+    canvas.create_rectangle(mid_x - half, y_1, mid_x + half, y_2, 'red')
+    
+    
+    
+    
+if __name__ == '__main__':
+    main()
+    
+    
+    
+
+#奇偶数鉴定器
+def main():
+    for i in range(10):
+        if is_odd_v1(i + 10):
+            print(i + 10, 'odd')
+        else:
+            print(i + 10, 'even')
+            
+def is_odd(value):
+    return value % 2 == 1
+            
+            
+def is_odd_v1(value):
+    remainder = value % 2
+    return remainder == 1
+            
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    
+#画一个棋盘，这是目前为止最复杂的绘画代码
+from graphics import Canvas
+import random
+
+CANVAS_WIDTH = 400
+CANVAS_HEIGHT = CANVAS_WIDTH
+N_ROWS = 8
+N_COLS = N_ROWS
+SIZE = CANVAS_WIDTH / N_ROWS
+
+def main():
+    canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+    for r in range(N_ROWS):
+        for c in range(N_COLS):
+            draw_square(canvas, r, c)
+            
+def draw_square(canvas, r, c):
+    print(r, c)
+    color = get_color(r, c)
+    x = c * SIZE
+    y = r * SIZE
+    end_x = x + SIZE
+    end_y = y + SIZE
+    
+    canvas.create_rectangle(x, y, end_x, end_y, color, 'black')
+            
+        
+def get_color(r, c):
+    if is_even(r+c):
+        return "green"
+    else:
+        return "beige"
+        
+def is_even(value):
+    return value % 2 == 0
+            
+if __name__ == '__main__':
+    main()
+    
+    
+    
+    

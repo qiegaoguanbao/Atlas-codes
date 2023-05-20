@@ -1,0 +1,81 @@
+random.randint(min, max)
+#Returns a random int between min and max inclusive
+
+random.random()
+#Returns a random float between 0 and 1
+
+random.uniform(min, max)
+#Returns a random float between min and max
+
+random.seed(1)
+#Fixes the random generator so that it gives the same sequence of numbers each time. Can change 1 to another number for a different fixed sequence. Helpful for debugging!
+
+
+
+
+import random
+
+def main():
+    # generate random number between min 1 and max 6
+    dice_roll = random.randint(1, 6)
+    print('dice value:', dice_roll)
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+import random
+
+# generate random probability between 0 and 1 (including 0)
+def main():
+   threshold = 0.80
+
+   # get the probability
+   probability = random.random()
+
+   # determine if the square is a bomb
+   is_bomb_square = False
+   if probability > threshold:
+      is_bomb_square = True
+
+   print(probability)
+   print(is_bomb_square)
+
+
+if __name__ == "__main__":
+   main()
+	 
+	 
+	 
+
+import random
+
+def main():
+   # generate random height between 1.0 and 3.0 (inclusive)
+   height_in_meters = random.uniform(1.0, 3.0)
+   height_in_meters = round(height_in_meters, 3)
+   print("height: " + str(height_in_meters) + "m")
+
+if __name__ == "__main__":
+   main()
+	 
+	 
+	 
+	 
+import random
+
+def main():
+   # generate random height between 1.0 and 3.0 (inclusive)
+   height_in_meters = random.uniform(1.0, 3.0)
+   height_in_meters = round(height_in_meters, 3)
+   print("height: " + str(height_in_meters) + "m")
+
+if __name__ == "__main__":
+   main()
+	 
+	 
+	 
+	 

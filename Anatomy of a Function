@@ -1,0 +1,225 @@
+#Function Call vs Function Definition
+#区别在于前面有没有def
+
+
+#Parts of a Function
+
+#header
+
+#body
+
+#return statement
+
+def name_of_function(parameters):
+    # Function Body
+
+    # Optional Return Statement
+    return value
+    
+    
+#Function Header
+def name_of_function(parameters):
+
+#这一步也等同于main函数的定义和调用，正如每个程序的最后一行
+if __name__ == '__main__':
+    main()
+		
+		
+#函数参数定义，不同参数用逗号间隔即可
+def name_of_function(param1, param2, param3):
+#参数的注释		
+def name_of_function(param1, param2, param3):
+    '''
+    name_of_function does this
+    params: 
+        param1 (type): what param1 should be
+        param2 (type): what param2 should be
+        param3 (type): what param3 should be
+    return: description of what this function returns
+    omit if nothing is returned
+    '''
+		
+
+#Function Body, 函数内容
+def name_of_function(param1, param2, param3):
+    '''
+    name_of_function does this
+    params: 
+        param1 (type): what param1 should be
+        param2 (type): what param2 should be
+        param3 (type): what param3 should be
+    '''
+    # Function Body
+    # Function Body
+    # Function Body
+		
+		
+#示例1
+def average(num1, num2):
+    '''
+    average two numbers together and return the result 
+    params: 
+        num1, num2 (int or float): numbers to average
+    return: average of num1 and num2
+    '''
+    result = (num1 + num2) / 2
+    return result
+
+
+def two_goodmornings(count):
+    '''
+    prints "Good Morning" a max of two times
+    params: 
+        count (int): the number of times to print "Good Morning" (max of two)
+    '''
+    for i in range(count):
+        if i == 2:
+            return
+        print("Good Morning!")
+
+
+# This function has no return statement
+def count_to_ten():
+    '''prints out numbers 1 through 10'''
+    for i in range(10):
+        print(i)
+
+
+# This is the main function, the one we call first
+def main():
+    # First we'll count to ten
+    count_to_ten()
+
+    # Then we'll try to say good morning three times
+    # but we can only say it twice
+    two_goodmornings(3)
+
+    # Finally, we want the average of two numbers, and
+    # we're going to store the result in a variable
+    num1 = 5
+    num2 = 10
+    my_average = average(num1, num2)
+	
+    # Now, if we print my_average, we'll see the result of
+    # the 'average' function
+    print(my_average)
+
+
+# Below is actually the first line the program runs
+# because everything else is inside of a function
+# definition. Here we call the main function which
+# gets our program rolling!
+if __name__ == "__main__":
+    main()
+		
+		
+		
+		
+#示例2
+# 0 Parameters; no return statement
+def function1():
+    '''prints "Hello, World!" '''
+    print("Hello, World!")
+
+
+# 0 Parameters; return statement
+def function2():
+    '''
+    prints "Hello, World!"
+    return: the int 10
+    '''
+    message = "Hello, World!"
+    print(message)
+    return 10
+
+
+# 1 Parameter; no return statement
+def function3(message):
+    '''
+    prints message 3 times
+    params: 
+        message (any): message to print
+    '''
+    for i in range(3):
+        print(message)
+
+
+# 1 Parameter; return statement
+def function4(message):
+    '''
+    prints message
+    params: 
+        message (any): message to print
+    return: True
+	'''
+    print(message)
+    return True
+
+
+# 2 Parameters; no return statement
+def function5(message, loops):
+    '''
+    prints message loops times
+    params: 
+        message (any): message to print
+        loops (int): number of times to print message
+    '''
+    for i in range(loops):
+        print(message)
+
+
+# 2 Parameters; return statement
+def function6(name, favorite_color):
+    '''
+    says hi to name and states "My favorite color is Blue
+    too" if favorite_color is blue. 
+    params:
+        name (str): name of person
+        favorite_color (str): favorite color of person
+    return: name
+    '''
+    print("Hi," , name)
+    if favorite_color == "Blue":
+        print("My favorite color is Blue too!")
+    return name
+    
+
+def main():
+    function1()
+    function2()
+    function3('hi')
+    function4('hello')
+    function5('Coding Rocks!', 4)
+    function6('Karel', 'Blue')
+
+
+if __name__ == '__main__':
+    main()
+		
+		
+		
+		
+#常见错误
+# Forgot to add def at the front of the header
+function1():
+    print("Something is not right here...")
+
+# Forgot to add a colon at the end
+def function2()
+    print("Hello, World!")
+
+# Forgot parentheses
+def function3:
+    print("Hello, World!")
+
+# Forgot commas for parameters
+def function4(num1 num2):
+    average = (num1 + num2) / 2
+
+# Defined a function within a function
+# Note: Technically, this is something you can do in Python
+# thought it's probably not what you intended and for now
+# it's best not to nest functions inside each other
+def first_function():
+    def second_function():
+        print("Hello, World!")

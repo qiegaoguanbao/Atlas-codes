@@ -1,0 +1,55 @@
+#Importing
+from graphics import Canvas
+
+# create a new canvas（画布尺寸可以随意更改）
+canvas = Canvas(800, 200)
+
+#画线
+line = canvas.create_line(...) # some parameters go in here
+canvas.create_line(10, 20, 100, 50, 'black')
+
+
+#画长方形
+canvas.create_rectangle(5, 50, 100, 200, 'yellow')
+
+
+#画椭圆
+canvas.create_oval(5, 50, 100, 200, 'red')
+
+
+#画重叠的图形，堆叠顺序由代码顺序决定
+canvas.create_rectangle(5, 50, 100, 200, 'yellow')
+canvas.create_oval(5, 50, 100, 200, 'red')
+
+
+#写字，四个参数
+
+#font
+
+#font_size
+
+#color
+
+#anchor
+
+canvas.create_text(50, 50, font='Arial', font_size = 50, text='My first text!', color='blue')
+
+
+#擦除图像，永久
+rect = canvas.create_rectangle(100, 200, 300, 400, 'yellow')
+...
+canvas.delete(rect)
+
+
+#隐藏图像，暂时
+rect = canvas.create_rectangle(100, 200, 300, 400, 'yellow')
+canvas.set_hidden(rect, True)  # no longer visible
+...
+canvas.set_hidden(rect, False) # visible again
+
+
+
+#图像顺序，又称z-order，由下层到上层对应代码的先后顺序
+canvas.create_rectangle(10, 50, 200, 300, 'yellow')
+canvas.create_oval(100, 100, 300, 350, 'red')
+canvas.create_text(70, 170, anchor='sw', font='Arial 30', text='yay!')
